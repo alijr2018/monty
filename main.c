@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 		}
 		else if (operator_array[0] != NULL && operator_array[0][0] != '#')
 		{
-			operator_function = go(operator_array[0], line_count, &head);
+			operator_function = search(operator_array[0], line_count, &head);
 
 			if (operator_function == NULL && line_count == 0)
 			{
