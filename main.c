@@ -28,16 +28,16 @@ int main(int argc, char *argv[])
 		line_count++;
 		operator_array[0] = strtok(str, "\n ");
 		if (operator_array[0] == NULL)
-			get_nop(&head, line_count);
+			_where(&head, line_count);
 		else if (strcmp("push", operator_array[0]) == 0)
 		{
 			temp = strtok(NULL, "\n ");
 
-			get_push(&head, line_count, temp);
+			_push(&head, line_count, temp);
 		}
 		else if (operator_array[0] != NULL && operator_array[0][0] != '#')
 		{
-			operator_function = search(operator_array[0], line_count, &head);
+			operator_function = se(operator_array[0], line_count, &head);
 
 			if (operator_function == NULL && line_count == 0)
 			{
@@ -47,6 +47,6 @@ int main(int argc, char *argv[])
 		operator_function(&head, line_count);
 		}
 	}
-	fclose(file), free(str), get_free(head);
+	fclose(file), free(str), _free(head);
 	return (0);
 }

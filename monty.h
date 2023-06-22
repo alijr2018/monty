@@ -48,20 +48,20 @@ extern FILE *file;
 FILE *file;
 
 void (*operator_function)(stack_t **, unsigned int);
-void (*search(char *op_f, unsigned int l, stack_t **s))(stack_t**, unsigned int);
+/***op.c**/
+void (*se(char *op_f, unsigned int l, stack_t **s))(stack_t**, unsigned int);
+
+void _push(stack_t **stack, unsigned int line_number, char *temp);
+void _pall(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void _where(stack_t **stack, unsigned int line_number);
 
 
-void get_push(stack_t **stack, unsigned int line_number, char *temp);
-void get_pall(stack_t **stack, unsigned int line_number);
-void get_pint(stack_t **stack, unsigned int line_number);
-void get_pop(stack_t **stack, unsigned int line_number);
-void get_swap(stack_t **stack, unsigned int line_number);
-void get_add(stack_t **stack, unsigned int line_number);
-void get_nop(stack_t **stack, unsigned int line_number);
 
-
-
-void get_free(stack_t *stack);
+void _free(stack_t *stack);
 int _isdigit(char *str);
 
 

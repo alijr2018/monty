@@ -1,15 +1,14 @@
 #include "monty.h"
 
 /**
- * get_pop - function that pops the top element of the stack
- * @stack: pointer to the top of the stack
- * @line_number: where the line number appears
- * Description: 2. pop
- * Return: see below
- * 1. upon success, nothing
- * 2. upon fail, EXIT_FAILURE
+ * _pop - A function that Pops the top element from the stack.
+ * @stack: Pointer to the top of the stack.
+ * @line_number:  Line number where it appears.
+ * pop operation.
+ * Return: if failed return EXIT_FAILURE esle return void.
  */
-void get_pop(stack_t **stack, unsigned int line_number)
+
+void _pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *first;
 
@@ -17,7 +16,7 @@ void get_pop(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 		fclose(file);
-		get_free(*stack);
+		_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	first = *stack;
@@ -31,16 +30,15 @@ void get_pop(stack_t **stack, unsigned int line_number)
 
 
 /**
- * get_push - function that pushes an element onto top of the stack
- * @stack: pointer to the top of the stack
- * @line_number: where the line number appears
- * @temp: Pointer to instruction
- * Description: 0. push, pall
- * Return: see below
- * 1. upon success, nothing
- * 2. upon fail, EXIT_FAILURE
+ * _push - A fuction responsible for adding an element to the top of the stack.
+ * @stack: Is a pointer that references the top of the stack.
+ * @line_number: Indicates the line number where the function is called.
+ * @temp: Is a pointer to the instruction.
+ * connect with push, pall
+ * Return: if fails returns EXIT_FAILURE else return void.
  */
-void get_push(stack_t **stack, unsigned int line_number, char *temp)
+
+void _push(stack_t **stack, unsigned int line_number, char *temp)
 {
 
 	stack_t *new_top;
@@ -51,13 +49,13 @@ void get_push(stack_t **stack, unsigned int line_number, char *temp)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		fclose(file);
-		get_free(*stack);
+		_free(*stack);
 		exit(EXIT_FAILURE);
 		if (_isdigit(temp) == 1)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			fclose(file);
-			get_free(*stack);
+			_free(*stack);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -82,19 +80,16 @@ void get_push(stack_t **stack, unsigned int line_number, char *temp)
 
 
 /**
- *  _isdigit - Finds if char is a digit or not
- *
- *  @str: Character passed in
- *
+ *  _isdigit - Determines whether a character is a digit or not.
+ *  @str: represents the character being tested.
  *  Return: 1 for digit, 0 if not
  */
 
 int _isdigit(char *str)
 {
+	int i;
 
-	int i = 0;
-
-
+	i = 0;
 	if (str[i] == '-')
 	{
 		i++;
@@ -112,15 +107,14 @@ int _isdigit(char *str)
 }
 
 /**
- * get_swap - function that swaps the top two elements on the stack
- * @stack: pointer to the top of the stack
- * @line_number: where the line number appears
- * Description: 3. swap
- * Return: see below
- * 1. upon success, nothing
- * 2. upon fail, EXIT_FAILURE
+ * _swap - is a function that exchanges the positions,
+ * of the top two elements in the stack.
+ * @stack: is a pointer indicating the top of the stack.
+ * @line_number: indicates the line number where the function is invoked.
+ * Return: In case failure returns EXIT_FAILURE else return void.
  */
-void get_swap(stack_t **stack, unsigned int line_number)
+
+void _swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *first, *second;
 
@@ -128,7 +122,7 @@ void get_swap(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		fclose(file);
-		get_free(*stack);
+		_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	else if (*stack)
