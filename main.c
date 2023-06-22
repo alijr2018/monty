@@ -1,12 +1,9 @@
 #include "monty.h"
 
 /**
- *  main - Main
- *
+ *  main - The monty program
  *  @argc: Number of args
- *
  *  @argv: Command line args
- *
  *  Return: Void
  */
 

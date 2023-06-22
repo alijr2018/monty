@@ -58,17 +58,9 @@ void get_pop(stack_t **stack, unsigned int line_number);
 void get_swap(stack_t **stack, unsigned int line_number);
 void get_add(stack_t **stack, unsigned int line_number);
 void get_nop(stack_t **stack, unsigned int line_number);
-void get_sub(stack_t **stack, unsigned int line_number);
-void get_div(stack_t **stack, unsigned int line_number);
-void get_mul(stack_t **stack, unsigned int line_number);
-void get_mod(stack_t **stack, unsigned int line_number);
-void get_rotl(stack_t **stack, unsigned int line_number);
-void get_pchar(stack_t **stack, unsigned int line_number);
-void get_rotr(stack_t **stack, unsigned int line_number);
-void get_pstr(stack_t **stack, unsigned int line_number);
 
 void get_free(stack_t *stack);
 int _isdigit(char *str);
 
 
-#endif /* MONTY_H */
+#endif 
