@@ -8,7 +8,7 @@
  */
 void _add(stack_t **stack, unsigned int line_number)
 {
-	stack_t *first, *second;
+	stack_t *i, *j;
 
 	if ((*stack == NULL) || ((*stack)->next == NULL))
 	{
@@ -19,12 +19,12 @@ void _add(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		first = *stack;
-		second = first->next;
-		second->n += first->n;
-		*stack = second;
+		i = *stack;
+		j = i->next;
+		j->n += i->n;
+		*stack = j;
 		(*stack)->prev = NULL;
-		free(first);
+		free(i);
 	}
 }
 

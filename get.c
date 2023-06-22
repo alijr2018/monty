@@ -10,7 +10,7 @@
 
 void _pop(stack_t **stack, unsigned int line_number)
 {
-	stack_t *first;
+	stack_t *i;
 
 	if ((*stack == NULL) || (stack == NULL))
 	{
@@ -19,13 +19,13 @@ void _pop(stack_t **stack, unsigned int line_number)
 		_free(*stack);
 		exit(EXIT_FAILURE);
 	}
-	first = *stack;
+	i = *stack;
 	*stack = (*stack)->next;
-	if (first->next)
+	if (i->next)
 	{
-		first->next->prev = NULL;
+		i->next->prev = NULL;
 	}
-	free(first);
+	free(i);
 }
 
 
@@ -116,7 +116,7 @@ int _isdigit(char *str)
 
 void _swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *first, *second;
+	stack_t *i, *j;
 
 	if ((*stack == NULL) || ((*stack)->next == NULL))
 	{
@@ -127,16 +127,16 @@ void _swap(stack_t **stack, unsigned int line_number)
 	}
 	else if (*stack)
 	{
-		first = *stack;
-		second = first->next;
-		*stack = second;
-		first->next = second->next;
-		if (second->next != NULL)
+		i = *stack;
+		j = i->next;
+		*stack = j;
+		i->next = j->next;
+		if (j->next != NULL)
 		{
-			second->next->prev = first;
+			j->next->prev = i;
 		}
-		second->prev = NULL;
-		second->next = first;
-		first->prev = second;
+		j->prev = NULL;
+		j->next = i;
+		i->prev = j;
 	}
 }
