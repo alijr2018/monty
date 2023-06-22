@@ -21,15 +21,7 @@ void (*go(char *op_f, unsigned int l, stack_t **stak))(stack_t**, unsigned int)
 		{"pint", get_pint},
 		{"swap", get_swap},
 		{"pop", get_pop},
-		{"sub", get_sub},
-		{"div", get_div},
-		{"mul", get_mul},
-		{"mod", get_mod},
 		{"nop", get_nop},
-		{"rotl", get_rotl},
-		{"rotr", get_rotr},
-		{"pchar", get_pchar},
-		{"pstr", get_pstr},
 		{NULL, NULL}
 	};
 
