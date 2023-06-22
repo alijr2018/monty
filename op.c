@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * go - Operators
+ * search - Operators
  *
  * @op_f: Char pointer
  * @l: line
@@ -11,7 +11,7 @@
  */
 
 
-void (*go(char *op_f, unsigned int l, stack_t **stak))(stack_t**, unsigned int)
+void (*search(char *op_f, unsigned int l, stack_t **stak))(stack_t**, unsigned int)
 {
 	int count;
 
