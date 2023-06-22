@@ -10,10 +10,10 @@
 int main(int argc, char *argv[])
 {
 	stack_t *head = NULL;
-	char  *str = NULL, *operator_array[2], *temp;
+	char  *str = NULL, *operator_array[2], *t;
 	size_t bufsize = 1024, line_count = 0;
 	ssize_t get_line;
-	void (*operator_function)(stack_t **stack, unsigned int line_number);
+	void (*operator_function)(stack_t **stack, unsigned int L_nbr);
 
 	if (argc != 2)
 		fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
@@ -31,9 +31,9 @@ int main(int argc, char *argv[])
 			_where(&head, line_count);
 		else if (strcmp("push", operator_array[0]) == 0)
 		{
-			temp = strtok(NULL, "\n ");
+			t = strtok(NULL, "\n ");
 
-			_push(&head, line_count, temp);
+			_push(&head, line_count, t);
 		}
 		else if (operator_array[0] != NULL && operator_array[0][0] != '#')
 		{

@@ -40,7 +40,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int L_nbr);
 } instruction_t;
 
 
@@ -51,13 +51,13 @@ void (*operator_function)(stack_t **, unsigned int);
 /***op.c**/
 void (*se(char *op_f, unsigned int l, stack_t **s))(stack_t**, unsigned int);
 
-void _push(stack_t **stack, unsigned int line_number, char *temp);
-void _pall(stack_t **stack, unsigned int line_number);
-void _pint(stack_t **stack, unsigned int line_number);
-void _pop(stack_t **stack, unsigned int line_number);
-void _swap(stack_t **stack, unsigned int line_number);
-void _add(stack_t **stack, unsigned int line_number);
-void _where(stack_t **stack, unsigned int line_number);
+void _push(stack_t **stack, unsigned int L_nbr, char *t);
+void _pall(stack_t **stack, unsigned int L_nbr);
+void _pint(stack_t **stack, unsigned int L_nbr);
+void _pop(stack_t **stack, unsigned int L_nbr);
+void _swap(stack_t **stack, unsigned int L_nbr);
+void _add(stack_t **stack, unsigned int L_nbr);
+void _where(stack_t **stack, unsigned int L_nbr);
 
 
 

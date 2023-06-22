@@ -3,18 +3,18 @@
 /**
  * _pop - A function that Pops the top element from the stack.
  * @stack: Pointer to the top of the stack.
- * @line_number:  Line number where it appears.
+ * @L_nbr:  Line number where it appears.
  * pop operation.
  * Return: if failed return EXIT_FAILURE esle return void.
  */
 
-void _pop(stack_t **stack, unsigned int line_number)
+void _pop(stack_t **stack, unsigned int L_nbr)
 {
 	stack_t *i;
 
 	if ((*stack == NULL) || (stack == NULL))
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", L_nbr);
 		fclose(file);
 		_free(*stack);
 		exit(EXIT_FAILURE);
@@ -32,50 +32,50 @@ void _pop(stack_t **stack, unsigned int line_number)
 /**
  * _push - A fuction responsible for adding an element to the top of the stack.
  * @stack: Is a pointer that references the top of the stack.
- * @line_number: Indicates the line number where the function is called.
- * @temp: Is a pointer to the instruction.
+ * @L_nbr: Indicates the line number where the function is called.
+ * @t: Is a pointer to the instruction.
  * connect with push, pall
  * Return: if fails returns EXIT_FAILURE else return void.
  */
 
-void _push(stack_t **stack, unsigned int line_number, char *temp)
+void _push(stack_t **stack, unsigned int L_nbr, char *t)
 {
 
-	stack_t *new_top;
+	stack_t *_n;
 
-	(void)line_number;
+	(void)L_nbr;
 
-	if (temp == NULL || _isdigit(temp) == 1)
+	if (t == NULL || _isdigit(t) == 1)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", L_nbr);
 		fclose(file);
 		_free(*stack);
 		exit(EXIT_FAILURE);
-		if (_isdigit(temp) == 1)
+		if (_isdigit(t) == 1)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n", L_nbr);
 			fclose(file);
 			_free(*stack);
 			exit(EXIT_FAILURE);
 		}
 	}
-	new_top = malloc(sizeof(stack_t));
-	if (new_top == NULL)
+	_n = malloc(sizeof(stack_t));
+	if (_n == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		fclose(file);
 		exit(EXIT_FAILURE);
 	}
-	new_top->n = atoi(temp);
-	new_top->next = NULL;
-	new_top->prev = NULL;
+	_n->n = atoi(t);
+	_n->next = NULL;
+	_n->prev = NULL;
 	if (*stack)
 	{
-		new_top->next = *stack;
-		(*stack)->prev = new_top;
-		*stack = new_top;
+		_n->next = *stack;
+		(*stack)->prev = _n;
+		*stack = _n;
 	}
-	*stack = new_top;
+	*stack = _n;
 }
 
 
@@ -110,17 +110,17 @@ int _isdigit(char *str)
  * _swap - is a function that exchanges the positions,
  * of the top two elements in the stack.
  * @stack: is a pointer indicating the top of the stack.
- * @line_number: indicates the line number where the function is invoked.
+ * @L_nbr: indicates the line number where the function is invoked.
  * Return: In case failure returns EXIT_FAILURE else return void.
  */
 
-void _swap(stack_t **stack, unsigned int line_number)
+void _swap(stack_t **stack, unsigned int L_nbr)
 {
 	stack_t *i, *j;
 
 	if ((*stack == NULL) || ((*stack)->next == NULL))
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", L_nbr);
 		fclose(file);
 		_free(*stack);
 		exit(EXIT_FAILURE);

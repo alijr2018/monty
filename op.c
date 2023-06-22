@@ -8,10 +8,9 @@
  * Return: Void.
  */
 
-
 void (*se(char *op_f, unsigned int l, stack_t **stak))(stack_t**, unsigned int)
 {
-	int count;
+	int i;
 
 	instruction_t operation[] = {
 		{"pall", _pall},
@@ -23,11 +22,11 @@ void (*se(char *op_f, unsigned int l, stack_t **stak))(stack_t**, unsigned int)
 		{NULL, NULL}
 	};
 
-	for (count = 0; operation[count].opcode != NULL; count++)
+	for (i = 0; operation[i].opcode != NULL; i++)
 	{
-		if (strcmp(operation[count].opcode, op_f) == 0)
+		if (strcmp(operation[i].opcode, op_f) == 0)
 		{
-			return (operation[count].f);
+			return (operation[i].f);
 		}
 	}
 	fprintf(stderr, "L%u: unknown instruction %s\n", l, op_f);
