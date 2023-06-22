@@ -1,6 +1,5 @@
 #include "main.h"
 
-global_var var_global;
 /**
  * main - driver function for monty program
  * @ac: int num of arguments
