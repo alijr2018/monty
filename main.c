@@ -39,8 +39,8 @@ int main(int argc, char *argv[])
 
 			if (f_op == NULL && j == 0)
 			{
-				fprintf(stderr, "L%ld: unknown instruction %s\n",
-					j, op_a[0]), exit(EXIT_FAILURE);
+				fprintf(stderr, "L%ld: unknown instruction %s\n", j, op_a[0]);
+					 exit(EXIT_FAILURE);
 			}
 		f_op(&n, j);
 		}
