@@ -22,6 +22,9 @@ void (*search(char *op_f, unsigned int l, stack_t **stak))
 		{"pop", _pop},
 		{"nop", _nop},
 		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mul},
+		{"mod", _mod},
 		{NULL, NULL}
 	};
 
