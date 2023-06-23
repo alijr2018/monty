@@ -53,14 +53,14 @@ void _free(stack_t *stack);
 void _where(stack_t **stack, unsigned int L_nbr);
 void _pall(stack_t **stack, unsigned int L_nbr);
 void _pint(stack_t **stack, unsigned int L_nbr);
-
+void (*f_op)(stack_t **, unsigned int);
 /***get.c***/
 void _pop(stack_t **stack, unsigned int L_nbr);
 void _swap(stack_t **stack, unsigned int L_nbr);
 void _push(stack_t **stack, unsigned int L_nbr, char *t);
 int _isdigit(char *str);
 
-void (*f_op)(stack_t **, unsigned int);
+
 /***op.c**/
 void (*se(char *op_f, unsigned int l, stack_t **s))(stack_t**, unsigned int);
 
