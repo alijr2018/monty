@@ -10,9 +10,11 @@
 int main(int argc, char *argv[])
 {
 	stack_t *n = NULL;
-	char  *s = NULL, *op_a[2], *t;
-	size_t bufsize = 1024, j = 0;
+	size_t bufsize = 1024, j;
 	ssize_t get_line;
+	char  *s = NULL, *op_a[2], *t;
+
+	j = 0;
 
 	if (argc != 2)
 		fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
