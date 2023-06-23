@@ -35,8 +35,6 @@ int main(int argc, char *argv[])
 		}
 		else if (op_a[0] != NULL && op_a[0][0] != '#')
 		{
-			operator_function = se(op_a[0], j, &n);
-
 			if (operator_function == NULL && j == 0)
 			{
 				fprintf(stderr, "L%ld: unknown instruction %s\n",
