@@ -9,19 +9,18 @@
  *
  * Return: Void
  */
-
-
-void (*search(char *op_f, unsigned int l, stack_t **stak))(stack_t**, unsigned int)
+void (*search(char *op_f, unsigned int l, stack_t **stak))
+(stack_t**, unsigned int)
 {
 	int count;
 
 	instruction_t operation[] = {
-		{"pall", get_pall},
-		{"add", get_add},
-		{"pint", get_pint},
-		{"swap", get_swap},
-		{"pop", get_pop},
-		{"nop", get_nop},
+		{"pall", _pall},
+		{"add", _add},
+		{"pint", _pint},
+		{"swap", _swap},
+		{"pop", _pop},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 
@@ -34,6 +33,7 @@ void (*search(char *op_f, unsigned int l, stack_t **stak))(stack_t**, unsigned i
 	}
 	fprintf(stderr, "L%u: unknown instruction %s\n", l, op_f);
 	fclose(file);
-	get_free(*stak);
+	_freestack(*stak);
 	exit(EXIT_FAILURE);
 }
+
