@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 			break;
 		j++;
 		op_a[0] = strtok(s, "\n ");
-		else if (strcmp("push", op_a[0]) == 0)
+		if (strcmp("push", op_a[0]) == 0)
 		{
 			t = strtok(NULL, "\n ");
 			_push(&n, j, t);
