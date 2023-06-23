@@ -9,8 +9,6 @@
 #include <unistd.h>
 #include <sys/stat.h>
 
-
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -27,8 +25,6 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
-
-
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -43,7 +39,6 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int L_nbr);
 } instruction_t;
 
-
 extern FILE *file;
 FILE *file;
 
@@ -54,12 +49,12 @@ void _where(stack_t **stack, unsigned int L_nbr);
 void _pall(stack_t **stack, unsigned int L_nbr);
 void _pint(stack_t **stack, unsigned int L_nbr);
 void (*f_op)(stack_t **, unsigned int);
+
 /***get.c***/
 void _pop(stack_t **stack, unsigned int L_nbr);
 void _swap(stack_t **stack, unsigned int L_nbr);
 void _push(stack_t **stack, unsigned int L_nbr, char *t);
 int _isdigit(char *str);
-
 
 /***op.c**/
 void (*se(char *op_f, unsigned int l, stack_t **s))(stack_t**, unsigned int);
