@@ -47,22 +47,28 @@ typedef struct instruction_s
 extern FILE *file;
 FILE *file;
 
-void (*operator_function)(stack_t **, unsigned int);
+/***func.c***/
+void _add(stack_t **stack, unsigned int L_nbr);
+void _free(stack_t *stack);
+void _where(stack_t **stack, unsigned int L_nbr);
+void _pall(stack_t **stack, unsigned int L_nbr);
+void _pint(stack_t **stack, unsigned int L_nbr);
+
+/***get.c***/
+void _pop(stack_t **stack, unsigned int L_nbr);
+void _swap(stack_t **stack, unsigned int L_nbr);
+void _push(stack_t **stack, unsigned int L_nbr, char *t);
+int _isdigit(char *str);
+
+void (*f_op)(stack_t **, unsigned int);
 /***op.c**/
 void (*se(char *op_f, unsigned int l, stack_t **s))(stack_t**, unsigned int);
 
-void _push(stack_t **stack, unsigned int L_nbr, char *t);
-void _pall(stack_t **stack, unsigned int L_nbr);
-void _pint(stack_t **stack, unsigned int L_nbr);
-void _pop(stack_t **stack, unsigned int L_nbr);
-void _swap(stack_t **stack, unsigned int L_nbr);
-void _add(stack_t **stack, unsigned int L_nbr);
-void _where(stack_t **stack, unsigned int L_nbr);
 
 
 
-void _free(stack_t *stack);
-int _isdigit(char *str);
+
+
 
 
 #endif

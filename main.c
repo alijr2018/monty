@@ -35,14 +35,14 @@ int main(int argc, char *argv[])
 		}
 		else if (op_a[0] != NULL && op_a[0][0] != '#')
 		{
-			operator_function = se(op_a[0], j, &n);
+			f_op = se(op_a[0], j, &n);
 
-			if (operator_function == NULL && j == 0)
+			if (f_op == NULL && j == 0)
 			{
 				fprintf(stderr, "L%ld: unknown instruction %s\n",
 					j, op_a[0]), exit(EXIT_FAILURE);
 			}
-		operator_function(&n, j);
+		f_op(&n, j);
 		}
 	}
 	fclose(file), free(s), _free(n);
