@@ -59,11 +59,4 @@ int _isdigit(char *str);
 /***op.c**/
 void (*se(char *op_f, unsigned int l, stack_t **s))(stack_t**, unsigned int);
 
-
-
-
-
-
-
-
 #endif
