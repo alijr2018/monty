@@ -21,6 +21,7 @@ void (*search(char *op_f, unsigned int l, stack_t **stak))
 		{"swap", _swap},
 		{"pop", _pop},
 		{"nop", _nop},
+		{"sub", _sub},
 		{NULL, NULL}
 	};
 
