@@ -43,20 +43,7 @@ void _free(stack_t *stack)
 	}
 }
 
-/**
- *  _where - Indicates the absence of an operation.
- *  @stack: Header of stack
- *  @L_nbr: Integer representing line numbers.
- *  Return: Void
- */
 
-
-void _where(stack_t **stack, unsigned int L_nbr)
-{
-
-	(void) stack;
-	(void) L_nbr;
-}
 
 /**
  * _pall - A function that displays all elements stored in the stack.
