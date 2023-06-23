@@ -6,7 +6,6 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/stat.h>
-<<<<<<< HEAD
 #include <sys/types.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -14,8 +13,6 @@
 #include <sys/uio.h>
 #define BUFSIZE 1024
 extern FILE *file;
-=======
->>>>>>> 6c591601cbd090037852b95504305c6e83d9aae3
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -38,10 +35,9 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int L_nbr);
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-<<<<<<< HEAD
 
 void (*search(char *op_f, unsigned int l, stack_t **s))(stack_t**, unsigned int);
 void _push(stack_t **stack, unsigned int line_number, char *temp);
@@ -63,25 +59,4 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 int _fileno(FILE *stream);
 
 #endif /**MONTY_H*/
-=======
-extern FILE *file;
-FILE *file;
-
-/***func.c***/
-void _add(stack_t **stack, unsigned int L_nbr);
-void _free(stack_t *stack);
-void _where(stack_t **stack, unsigned int L_nbr);
-void _pall(stack_t **stack, unsigned int L_nbr);
-void _pint(stack_t **stack, unsigned int L_nbr);
-void (*f_op)(stack_t **, unsigned int);
-
-/***get.c***/
-void _pop(stack_t **stack, unsigned int L_nbr);
-void _swap(stack_t **stack, unsigned int L_nbr);
-void _push(stack_t **stack, unsigned int L_nbr, char *t);
-int _isdigit(char *str);
-
-/***op.c**/
-void (*se(char *op_f, unsigned int l, stack_t **s))(stack_t**, unsigned int);
->>>>>>> 6c591601cbd090037852b95504305c6e83d9aae3
 
